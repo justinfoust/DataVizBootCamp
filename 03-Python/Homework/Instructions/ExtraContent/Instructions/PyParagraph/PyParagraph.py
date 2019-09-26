@@ -1,3 +1,9 @@
+###---------------------------------------------------------###
+###   Python Challenge HW  --  Extra Content -- PyParagraph ###
+###   Justin Foust  --  09/26/2019  --  Data Boot Camp      ###
+###---------------------------------------------------------###
+
+
 import os   #file pointing functions
 import re   #RegEx functionality
 from statistics import mean  #Import only mean() from statistics module
