@@ -21,12 +21,19 @@
 --3) List the manager of each deparment with the following information:
 --   department number, department name, manager's employee number, last name, first name, start and end dates
 
-SELECT *
-FROM Depts;
+-- SELECT d.dept_no, d.dept_name, dm.emp_no, e.last_name, e.first_name, dm.from_date, dm.to_date
+-- FROM Dept_mgr dm
+-- JOIN Emp e ON
+-- 	e.emp_no = dm.emp_no
+-- JOIN Depts d ON
+-- 	d.dept_no = dm.dep_no;
 
 --4) List the deaprtment of each employee with the following information: 
 --   employee number, last name, first name, and department name.
 
+SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
+FROM Dept_emp
+JOIN Emp e on
 
 --5) List all employees whose first name is "Hercules" and last names begin with "B".
 
