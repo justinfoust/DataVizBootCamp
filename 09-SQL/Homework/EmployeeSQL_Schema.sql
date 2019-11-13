@@ -1,3 +1,8 @@
+---------------------------------------------------------------------------
+---   SQL Challenge HW  --  Employee Database: A Mystery in Two Parts   ---
+---   Justin Foust  --  11/11/2019  --  Data Boot Campy                 ---
+---------------------------------------------------------------------------
+
 
 CREATE TABLE Depts
 (
