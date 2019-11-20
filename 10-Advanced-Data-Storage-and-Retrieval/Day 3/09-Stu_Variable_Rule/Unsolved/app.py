@@ -39,7 +39,15 @@ def welcome():
 
 """TODO: Handle API route with variable path to allow getting info
 for a specific character based on their 'superhero' name """
+@app.route("/api/v1.0/justice-league/superhero/<super_name>")
+def hero_info(super_name):
 
+    canonicalized = superhero.replace(" ","").lower()
+    for character in justice_league_members:
+        search_term = character["superhero"].replace(" ","").lower()
+
+        if super_name == canonicalized:
+            return jsonify(character)
 
 if __name__ == "__main__":
     app.run(debug=True)
