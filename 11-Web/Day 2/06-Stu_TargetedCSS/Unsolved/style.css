@@ -1,0 +1,18 @@
+#first {
+    color: blue;
+    background-color: black;
+    font-size: 40px;
+}
+
+.c-color {
+    color:purple;
+}
+
+#second {
+    font-weight: bold;
+}
+
+#fourth {
+    color:red;
+    background-color: black;
+}
