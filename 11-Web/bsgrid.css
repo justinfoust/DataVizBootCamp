@@ -1,0 +1,17 @@
+#top-row {
+    background-color: yellow;
+    margin-bottom: 10px;
+}
+
+#mid-row {
+    background-color: orange;
+    margin-bottom: 10px
+}
+
+#bottom-row {
+    background-color: red;
+}
+
+.row div{
+    border: 1px solid black;
+}

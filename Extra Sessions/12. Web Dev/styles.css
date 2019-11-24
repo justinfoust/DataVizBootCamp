@@ -1,0 +1,39 @@
+.box-yellow {
+    background-color: #c6d42a;
+    border: 1px black solid;
+}
+
+.box-orange {
+    background-color: #ffa64d;
+    border: 1px black solid;
+}
+
+.box-red {
+    background-color: #ff6666;
+    border: 1px black solid;
+}
+
+@media (max-width: 1000px) {
+    .box-yellow {
+        font-size: 14px;
+        background-color: black;
+        border-color: #c6d42a;
+        color: #c6d42a;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .box-yellow {
+        font-size: 10px;
+        background-color:  black;
+        color: white;
+        border-color: white;
+    }
+}
+
+.squeeze {
+    margin: 15px;
+}
+
+.top-buffer { margin-top:20px; }
