@@ -15,7 +15,11 @@
     <div>
       <ul style="list-style: none;">
 
-        <!-- Loop through the dictionary -->
+        {% for pet in dict %}
+        <li style="font-size: x-large;">Name = {{pet.name}}</li>
+        <li style="font-size: large;">Type = {{pet.type}}</li>
+        <br/>
+        {% endfor %}
 
 
       </ul>

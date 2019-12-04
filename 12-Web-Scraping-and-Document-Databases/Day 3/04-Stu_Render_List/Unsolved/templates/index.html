@@ -13,9 +13,16 @@
   <div class="container text-center">
     <h1 class="jumbotron">Favorite Movies</h1>
     <div>
-
-<!-- Create a list a group of movie cards -->
-
+      
+      {% for title, description in list %}
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted"></h6>
+          <p class="card-text">This movie is about {{description}}</p>
+        </div>
+      </div>
+      {% endfor %}
 
 
     </div>
