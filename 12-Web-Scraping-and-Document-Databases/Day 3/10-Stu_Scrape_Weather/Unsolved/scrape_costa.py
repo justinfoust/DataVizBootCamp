@@ -5,7 +5,7 @@ import time
 
 def init_browser():
     # @NOTE: Replace the path with your actual path to the chromedriver
-    executable_path = {"executable_path": "/usr/local/bin/chromedriver"}
+    executable_path = {"executable_path": "chromedriver.exe"}
     return Browser("chrome", **executable_path, headless=False)
 
 
@@ -28,11 +28,17 @@ def scrape_info():
     # Get the min avg temp
     # @TODO: YOUR CODE HERE!
 
+    min_temp = soup.find('div', id_='weather').p.strong.text
+
     # Get the max avg temp
     # @TODO: YOUR CODE HERE!
 
+    max_temp = soup.find('div', id_='weather').p.strong.text
+
     # BONUS: Find the src for the sloth image
     # @TODO: YOUR CODE HERE!
+
+    sloth_img = soup.find('img', alt_='Image 2')['src']
 
     # Store data in a dictionary
     costa_data = {

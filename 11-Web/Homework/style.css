@@ -7,9 +7,21 @@ body div {
 }
 
 #figCol {
-    background-color: red;
+
 }
 
 h1 {
     text-align: center;
+}
+
+/*
+img {
+    margin: auto;
+    display: block;
+}*/
+
+.centered {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
 }

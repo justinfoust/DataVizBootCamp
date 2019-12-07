@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        FitSpotting Hotel Listing
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+    <div class="ui inverted segment">
+        <div class="ui inverted secondary menu">
+            <a class="active item">
+                Home
+            </a>
+            <a class="item" href="/load">
+                Load Data
+            </a>
+        </div>
+    </div>
+    <div class="ui link cards">
+        {% for i in hotels  %}
+        <div class="card {% if i['color']== 'red' %} red {% elif i['color']== 'green'%} green {% endif %}">
+            <div class="image">
+                {% if i["frontImage"]|length %}
+                <img src="{{ i['frontImage'] }}">
+                {% else %}
+                <img src="https://media-api.xogrp.com/images/9a506749-95e9-47cf-857e-5374f2205b93~rs_768.h">
+                {% endif %}
+            </div>
+            <div class="content">
+                <div class="header">{{ i["Name"] }}</div>
+
+                <div class="description red column">
+                     {{ i["Address1"] }}
+                </div>
+            </div>
+            <div class="extra content">
+                <span class="right floated">
+                    Zip Code {{ i["PostalCode"] }}
+                </span>
+                <span>
+                    <i class="user icon"></i>
+                    {{ i["reviewsCnt"] }} Reviews
+                </span>
+            </div>
+            
+        </div>
+        {% endfor %}
+
+    </div>
+
+</body>
+
+</html>
