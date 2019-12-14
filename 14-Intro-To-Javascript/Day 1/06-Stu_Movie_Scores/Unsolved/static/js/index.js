@@ -21,3 +21,31 @@ var sum = 0;
 var goodMovieScores = [];
 var okMovieScores = [];
 var badMovieScores = [];
+
+
+for (var i=0; i<movieScores.length; i++)
+{
+  var score = movieScores[i];
+
+  sum += score
+
+  if (score > 7)
+  {
+    goodMovieScores.push(score);
+  }
+  else if (score <= 7 && score >= 5)
+  {
+    okMovieScores.push(score);
+  }
+  else
+  {
+    badMovieScores.push(score);
+  }
+}
+
+var avg = sum/movieScores.length;
+
+console.log(`The average score for all movies is ${avg}`);
+console.log(`There are ${goodMovieScores.length} good movies`);
+console.log(`There are ${okMovieScores.length} ok movies`);
+console.log(`There are ${badMovieScores.length} bad movies`);

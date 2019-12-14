@@ -16,6 +16,8 @@ def home():
     # Find one record of data from the mongo database
     # @TODO: YOUR CODE HERE!
 
+    
+
     # Return template and data
     return render_template("index.html", vacation=destination_data)
 

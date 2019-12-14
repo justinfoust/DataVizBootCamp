@@ -23,7 +23,50 @@
 
     // @TODO: Write the Conditional Statements needed to approve or deny a loan
     // YOUR CODE HERE!
-
+    if (income < 30000)
+      {
+        if (debtIncomeRatio < 0.5)
+        {
+          console.log('You do not get the loan.')
+        }
+        else if (debtIncomeRatio >= 0.5)
+        {
+          console.log('You get the loan.')
+        }
+      }
+      else if (income >= 30000 && income <= 75000)
+      {
+        if (yearsInJob < 1)
+        {
+          console.log('You do not get the loan.')
+        }
+        else if (yearsInJob > 5)
+        {
+          console.log('You get the loan.')
+        }
+        else if (yearsInJob > 1 && yearsInJob < 5)
+        {
+          if (goodCredit === true)
+          {
+            console.log('You get the loan.')
+          }
+          else if (goodCredit === false)
+          {
+            console.log('You do not get the loan.')  
+          }
+        }
+      }
+      else if (income > 75000)
+      {
+        if (criminalRecord === true)
+        {
+          console.log('You do not get the loan.')
+        }
+        else if (criminalRecord === false)
+        {
+          console.log('You get the loan.')
+        }
+      }
   </script>
 </body>
 
