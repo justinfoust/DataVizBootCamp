@@ -1,17 +1,21 @@
+/*
 div .row div{
     background-color: gainsboro;
 }
+*/
 
+/*
 body div {
     border: 1px solid black;
 }
+*/
 
 #figCol {
 
 }
 
 h1 {
-    text-align: center;
+    color: var(--yellow)
 }
 
 /*
@@ -24,4 +28,9 @@ img {
     float: none;
     margin-left: 0;
     margin-right: 0;
+}
+
+.figure-title {
+    font-size: 1.5em;
+    font-weight: bold;
 }
