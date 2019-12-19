@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <header>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">Navbar</a>
+                    <a class="navbar-brand" href="index.html">CA Health Trends</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -25,46 +25,48 @@
                                     Plots
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Figure 1</a>
-                                    <a class="dropdown-item" href="#">Figure 2</a>
-                                    <a class="dropdown-item" href="#">Figure 3</a>
-                                    <a class="dropdown-item" href="#">Figure 4</a>
+                                    <a class="dropdown-item" href="coordinate-map.html">CA Coordinate Map</a>
+                                    <a class="dropdown-item" href="museums.html">Museums</a>
+                                    <a class="dropdown-item" href="parks.html">Parks</a>
+                                    <a class="dropdown-item" href="medical.html">Medical</a>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Comparison</a>
+                                <a class="nav-link" href="comparisons.html">Comparison</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Data</a>
+                                <a class="nav-link" href="data.html">Data</a>
                             </li>
                         </ul>
                     </div>
                 </nav>
             </header>
-            <div class="row justify-content-lg-center bg-light">
-                <div class="col col-lg-6 m-4 p-3 bg-white">
-                    <h1>Some Title</h1>
+            <div class="row justify-content-center bg-light align-items-start">
+                <div class="col-lg-6 m-4 p-3 bg-white">
+                    <h1>California Life Expectancy Factors</h1>
                     <hr>
                     <p>
-                        <img src="https://www.placecage.com/200/200" class="rounded float-left" style="margin-right: 12px"/>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus. Egestas purus viverra accumsan in nisl nisi scelerisque eu. Rhoncus est pellentesque elit ullamcorper dignissim. Tristique senectus et netus et malesuada. Morbi tincidunt augue interdum velit. Vehicula ipsum a arcu cursus vitae congue mauris. Dis parturient montes nascetur ridiculus.
+                        <img src="Resources/museum.png" class="rounded float-left" style="margin-right: 12px; height: 250px"/>
+                        By analyzing California census life expectancy data we set out to determine if any trends could be observed for those living in close proximity to parks, museums, or medical services.  We defined close proximaty as locations of interest (LOI) that were within 25 miles of the central coordinates of a given zip code.  While an overall slight positive trend observed between life expectancy and number of locations counted for all three analyses, the correlation between the data and this trend are weak.<br><br>Since census data locations are reported by tracts, life expectancies were first aggregated by correcsponding zip codes and then averaged.  LOI data was collected using YELP API searhcing for appropriate key words.
+                        
                     </p>
                 </div>
 
-
-                <div class="col-auto m-4 p-3 bg-white">
+                <div class="col-sm-auto m-4 p-3 bg-white">
 
                     <h1>Vizualizations</h1>
                     <hr>
 
-                    <div class="row justify-content-around float-md-left">
-                        <div class="col col-sm m-2" id="figCol"><img src="https://www.placecage.com/150/150" class=""/></div>
-                        <div class="col col-sm m-2" id="figCol"><img src="https://www.placecage.com/150/150" class=""/></div>
+<!--                    float-md-right-->
+                   
+                    <div class="row justify-content-around">
+                        <div class="col-sm-6" id="figCol"><img src="Resources/overlay.png" style="height: 150px"/></div>
+                        <div class="col-sm-6" id="figCol"><img src="Resources/museum.png" style="height: 150px"/></div>
                     </div>
-                    <div class="w-100 d-none d-lg-block"></div>
-                    <div class="row justify-content-around float-md-right">
-                        <div class="col col-sm m-2" id="figCol"><img src="https://www.placecage.com/150/150" class=""/></div>
-                        <div class="col col-sm m-2" id="figCol"><img src="https://www.placecage.com/150/150" class=""/></div>
+<!--                    <div class="w-100 d-none d-lg-block"></div>-->
+                    <div class="row justify-content-around">
+                        <div class="col-sm-6" id="figCol"><img src="Resources/park.png" style="height: 150px"/></div>
+                        <div class="col-sm-6" id="figCol"><img src="Resources/hosp.png" style="height: 150px"/></div>
                     </div>
                 </div>
             </div>

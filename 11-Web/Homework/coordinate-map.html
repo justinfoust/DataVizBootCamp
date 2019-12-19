@@ -25,10 +25,10 @@
                                     Plots
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="medical.html">Medical</a>
+                                    <a class="dropdown-item" href="coordinate-map.html">CA Coordinate Map</a>
                                     <a class="dropdown-item" href="museums.html">Museums</a>
                                     <a class="dropdown-item" href="parks.html">Parks</a>
-                                    <a class="dropdown-item" href="coordinate-map.html">CA Coordinate Map</a>
+                                    <a class="dropdown-item" href="medical.html">Medical</a>
                                 </div>
                             </li>
                             <li class="nav-item">
@@ -42,32 +42,29 @@
                 </nav>
             </header>
             <div class="row justify-content-center bg-light align-items-start">
-                <div class="col-lg-6 m-4 p-3 bg-white">
-                    <h1>California Life Expectancy Factors</h1>
+                <div class="m-4 p-3 bg-white" style="width: 600px; float: left">
+                    <h1>Coordinate Map: Methodology</h1>
                     <hr>
+                    <img src="Resources/overlay.png" class="rounded" style="margin-right: 12px; height: 400px"/>
                     <p>
-                        <img src="Resources/museum.png" class="rounded float-left" style="margin-right: 12px; height: 250px"/>
-                        By analyzing California census life expectancy data we set out to determine if any trends could be observed for those living in close proximity to parks, museums, or medical services.  We defined close proximaty as locations of interest (LOI) that were within 25 miles of the central coordinates of a given zip code.  While an overall slight positive trend observed between life expectancy and number of locations counted for all three analyses, the correlation between the data and this trend are weak.<br><br>Since census data locations are reported by tracts, life expectancies were first aggregated by correcsponding zip codes and then averaged.  LOI data was collected using YELP API searhcing for appropriate key words.
-                        
+                        Because using the YELP API with a free account limits the number of search hits that can be retrieved per day, searches were carried out in such a way as to minimize duplicate results.  This is illustrated in the figure above in which the plotted coordinates of all California zip codes can be seen to be highly clustered which would result in several duplicate search hits.  To mitigate this a search grid was generated with each point 25 miles appart from those adjacent and then filterd to keep points that fall within the coordinate bounderies of California. Using the resulting search grid to search for points of interest, plotted in green in the figure above, we can be sure that all California will be covered in our search with minimal duplicate searches.  Once coordinates for each distinct search hit was recorded, frequency of occurance within 25 miles of each zip code could then be calculated.
                     </p>
                 </div>
 
-                <div class="col-sm-auto m-4 p-3 bg-white">
+                <div class="m-4 p-3 bg-white" style="">
 
                     <h1>Vizualizations</h1>
                     <hr>
 
-<!--                    float-md-right-->
-                   
-                    <div class="row justify-content-around">
-                        <div class="col-sm-6"><a href="medical.html"><img src="Resources/hosp.png" style="height: 150px"/></a></div>
-                            <div class="col-sm-6"><a href="Museums.html"><img src="Resources/museum.png" style="height: 150px"/></a></div>
-                    </div>
-<!--                    <div class="w-100 d-none d-lg-block"></div>-->
-                    <div class="row justify-content-around">
-                        <div class="col-sm-6"><a href="parks.html"><img src="Resources/park.png" style="height: 150px"/></a></div>
-                            <div class="col-sm-6"><a href="coordinate-map.html"><img src="Resources/overlay.png" style="height: 150px"/></a></div>
-                    </div>
+
+                    <div class="float-left"><a href="medical.html"><img src="Resources/hosp.png" style="height: 150px"/></a></div>
+                    <div class="w-100 d-block"></div>
+                    <div class="float-left"><a href="Museums.html"><img src="Resources/museum.png" style="height: 150px"/></a></div>
+                    <div class="w-100 d-none d-xl-block"></div>
+                    <div class="float-left"><a href="parks.html"><img src="Resources/park.png" style="height: 150px"/></a></div>
+                    <div class="w-100 d-block"></div>
+                    <div class="float-left" style="border: solid 2px blue;"><a href="coordinate-map.html"><img src="Resources/overlay.png" style="height: 150px"/></a></div>
+
                 </div>
             </div>
         </div>

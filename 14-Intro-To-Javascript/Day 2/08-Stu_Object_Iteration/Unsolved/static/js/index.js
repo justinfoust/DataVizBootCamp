@@ -14,3 +14,21 @@ var recipes = [
 console.log(recipes);
 
 // @TODO: YOUR CODE HERE
+
+var dishes = [];
+var spices = [];
+
+recipies.forEach(recipie => {dishes += recipie.dish});
+recipies.forEach(recipie => {spices += recipie.spice});
+
+console.log(dishes);
+console.log(spices);
+
+// var dishes = [];
+// var spices = [];
+
+// dishes = recipes.map(recipie => recipie.dish);
+// spices = recipes.map(recipie => recipie.spice);
+
+// console.log(dishes);
+// console.log(spices);
