@@ -1,0 +1,6 @@
+pypdf2
+tabula-py
+pytesseract
+wand
+pdf2image
+poppler

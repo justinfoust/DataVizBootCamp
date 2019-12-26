@@ -1,0 +1,10 @@
+If anyone is having trouble using the 'Analysis ToolPak' in Excel:
+
+
+
+https://www.excel-easy.com/data-analysis/analysis-toolpak.html
+
+
+More information on Regression:
+
+https://www.excel-easy.com/examples/regression.html
