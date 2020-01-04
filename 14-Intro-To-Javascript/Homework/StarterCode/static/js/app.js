@@ -14,22 +14,38 @@ function insertRows(dataInput) {
     });
 };
 
-insertRows(data)
+insertRows(tableData)
 
 var button = d3.select("#filter-btn");
-var inputField = d3.select("#datetime");
+var datetimeFilter = d3.select("#datetime");
+var countryFilter = d3.select("#country");
 
 button.on("click", function() {
-    tbody.html("")
+    tbody.html("");
     
-    var filterParam = inputField.property("value");
-    var filterData = data.filter(dataEntry => {
-        return dataEntry.datetime = filterParam;
-    });
+    var filterData = tableData
     
-    if (filterData == "") {
-        insertRows(data);
-    } else {
-        insertRows(filterData);
+    var datetimeParam = datetimeFilter.property("value");
+    var countryParam = countryFilter.property("value");
+    
+    console.log(datetimeParam);
+    console.log(countryParam);
+    
+    if (datetimeParam != "") {
+        console.log("date filter");
+        var filterData = filterData.filter(dataEntry => {
+            return dataEntry.datetime = datetimeParam
+        });
     }
+    
+    if (countryParam != "") {
+        console.log("country filter");
+        var filterData = filterData.filter(dataEntry => {
+            return dataEntry.country = countryParam
+        });
+    }
+    
+    var returnData = filterData.filter().filter().filter()
+    
+    insertRows(filterData);
 });
