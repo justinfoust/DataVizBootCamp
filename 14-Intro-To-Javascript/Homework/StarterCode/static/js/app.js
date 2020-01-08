@@ -18,7 +18,11 @@ insertRows(tableData)
 
 var button = d3.select("#filter-btn");
 var datetimeFilter = d3.select("#datetime");
+var cityFilter = d3.select("#city");
+var stateFilter = d3.select("#state");
 var countryFilter = d3.select("#country");
+var shapeFilter = d3.select("#shape");
+
 
 button.on("click", function() {
     tbody.html("");
@@ -26,26 +30,42 @@ button.on("click", function() {
     var filterData = tableData
     
     var datetimeParam = datetimeFilter.property("value");
+    var cityParam = cityFilter.property("value");
+    var stateParam = stateFilter.property("value");
     var countryParam = countryFilter.property("value");
+    var shapeParam = shapeFilter.property("value");
     
-    console.log(datetimeParam);
-    console.log(countryParam);
     
     if (datetimeParam != "") {
-        console.log("date filter");
         var filterData = filterData.filter(dataEntry => {
-            return dataEntry.datetime = datetimeParam
+            return dataEntry.datetime == datetimeParam
+        });
+    }
+    
+    if (cityParam != "") {
+        var filterData = filterData.filter(dataEntry => {
+            return dataEntry.city == cityParam
+        });
+    }
+    
+    if (stateParam != "") {
+        var filterData = filterData.filter(dataEntry => {
+            return dataEntry.state == stateParam
         });
     }
     
     if (countryParam != "") {
-        console.log("country filter");
         var filterData = filterData.filter(dataEntry => {
-            return dataEntry.country = countryParam
+            return dataEntry.country == countryParam
         });
     }
     
-    var returnData = filterData.filter().filter().filter()
+    if (shapeParam != "") {
+        var filterData = filterData.filter(dataEntry => {
+            return dataEntry.shape == shapeParam
+        });
+    }
+    
     
     insertRows(filterData);
 });

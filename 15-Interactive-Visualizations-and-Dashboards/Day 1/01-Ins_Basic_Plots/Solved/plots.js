@@ -12,7 +12,7 @@ var layout = {
   title: "'Bar' Chart"
 };
 
-//Plotly.newPlot("plot", data, layout);
+Plotly.newPlot("plot", data, layout);
 
 
 // // Part 2 - Adding attributes
