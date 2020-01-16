@@ -45,7 +45,24 @@ d3.csv("hours-of-tv-watched.csv").then(function(tvData) {
 
    // @TODO
   // Create code to build the bar chart using the tvData.
-
+//chartGroup.selectAll(".bar")
+//    .data(tvData.map(x => x.hours)).enter()
+//    .append("rect")
+//    .attr("x", (d, i) => i * barWidth + barSpacing)
+//    .attr("y", d => svgHeight - d - chartMargin.bottom)
+//    .attr("width", barWidth)
+//    .attr("height", d => d * scaleY)
+//    .classed("bar", true);
+    
+chartGroup.selectAll(".bar")
+    .data(tvData)
+    .enter()
+    .append("rect")
+    .classed("bar", true)
+    .attr("width", d => barWidth)
+    .attr("height", d => d.hours * scaleY)
+    .attr("x", (d, i) => i * (barWidth + barSpacing))
+    .attr("y", d => chartHeight - d.hours * scaleY)
 }).catch(function(error) {
   console.log(error);
 });
