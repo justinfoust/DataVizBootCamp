@@ -2,12 +2,51 @@
 var trace3 = {
     type: "scatterpolar",
     mode: "lines",
-    r: [1],
-    theta: [55]
-    
+    r: [0,1,1,0],
+    theta: [0,55,55,0],
+    line: {
+        color: 'red',
+        width: 10
+    }
 };
 
-var data = [trace3];
+var trace5 = {
+    type: "pie",
+    showlegend: false,
+    textinfo: "text",
+    textposition: "inside",
+    rotation: 90,
+    hole: 0.4,
+    values: [100/10, 100/10, 100/10, 100/10, 100/10, 100/10, 100/10, 100/10, 100/10, 100/10, 100],
+    text: [0,1,2,3,4,5,6,7,8,9],
+}
+
+//var trace4 =   {
+//    type: "scatterpolar",
+//    mode: "lines",
+//    r: [0, 3.5, 3.5, 0],
+//    theta: [0, 55, 75, 0],
+//    fill: "toself",
+//    fillcolor: '#E4FF87',
+//    line: {
+//      color: 'black'
+//    }
+//};
+
+var data = [trace5];
+
+var layout = {
+    showlegend: false,
+    polar: {
+		sector: [0,180],
+        radialaxis: {
+            visible: false
+        },
+        angularaxis: {
+            visible: false
+        }
+    }
+};
 
 //var trace1 = {
 //    type: "barpolar",
@@ -100,6 +139,45 @@ var data = [trace3];
 //var data = [traceA];
 
 
+//  type: 'pie',
+//        showlegend: false,
+//        hole: 0.4,
+//        rotation: 90,
+//        values: [ 81/9, 81/9, 81/9, 81/9, 81/9, 81/9, 81/9, 81/9, 81/9, 81],
+//        text: ['0','1','2','3','4','5','6','7','8'],
+//        direction: 'clockwise',
+//        textinfo: 'text',
+//        textposition: 'inside',
+//        marker: {
+//            colors: ['','','','','','','','','','white'],
+//            labels: ['0-1','1-2','2-3','3-4','4-5','5-6','6-7','7-8','8-9'],
+//            hoverinfo: 'label'
+//        }
+//    };
+//
+//    var gaugeData = [gaugeTrace];
+//
+//    // needle
+//    var degrees = 50, radius = .5
+//    var radians = degrees * Math.PI / 180
+//    var x = -1 * radius * Math.cos(radians) * samples.metadata[0].wfreq
+//    var y = radius * Math.sin(radians)
+//
+//    var gaugeLayout = {
+//        shapes: [{
+//            type: 'line',
+//            x0: 0.5,
+//            y0: 0.5,
+//            x1: 0.6,
+//            y1: 0.6,
+//            line: {
+//                color: 'black',
+//                width: 3
+//            }
+//        }],
+//        title: 'Chart',
+//        xaxis: {visible: false, range: [-1, 1]},
+//        yaxis: {visible: false, range: [-1, 1]}
+//    }
 
-
-Plotly.newPlot("gauge-plot", data);
+Plotly.newPlot("gauge-plot", data, layout);
