@@ -17,6 +17,7 @@ var height = svgHeight - margin.top - margin.bottom;
 // append an SVG group that will hold our chart,
 // and shift the latter by left and top margins.
 // =================================
+
 var svg = d3
   .select("body")
   .append("svg")
@@ -29,14 +30,18 @@ var chartGroup = svg.append("g")
 // Step 3:
 // Import data from the donuts.csv file
 // =================================
+
 d3.csv("donuts.csv").then(function(donutData) {
+    
   // Step 4: Parse the data
   // Format the data and convert to numerical and date values
   // =================================
   // Create a function to parse date and time
+    
   var parseTime = d3.timeParse("%d-%b");
 
   // Format the data
+    
   donutData.forEach(function(data) {
     data.date = parseTime(data.date);
     data.morning = +data.morning;
@@ -45,6 +50,7 @@ d3.csv("donuts.csv").then(function(donutData) {
 
   // Step 5: Create Scales
   //= ============================================
+    
   var xTimeScale = d3.scaleTime()
     .domain(d3.extent(donutData, d => d.date))
     .range([0, width]);
@@ -59,6 +65,7 @@ d3.csv("donuts.csv").then(function(donutData) {
 
   // Step 6: Create Axes
   // =============================================
+    
   var bottomAxis = d3.axisBottom(xTimeScale).tickFormat(d3.timeFormat("%d-%b"));
   var leftAxis = d3.axisLeft(yLinearScale1);
   var rightAxis = d3.axisRight(yLinearScale2);
@@ -67,16 +74,19 @@ d3.csv("donuts.csv").then(function(donutData) {
   // Step 7: Append the axes to the chartGroup - ADD STYLING
   // ==============================================
   // Add bottomAxis
+    
   chartGroup.append("g")
     .attr("transform", `translate(0, ${height})`)
     .call(bottomAxis);
 
   // CHANGE THE TEXT TO THE CORRECT COLOR
+    
   chartGroup.append("g")
     .attr("stroke", "green") // NEW!
     .call(leftAxis);
 
   // CHANGE THE TEXT TO THE CORRECT COLOR
+    
   chartGroup.append("g")
     .attr("transform", `translate(${width}, 0)`)
     .attr("stroke", "orange") // NEW!
@@ -86,6 +96,7 @@ d3.csv("donuts.csv").then(function(donutData) {
   // Step 8: Set up two line generators and append two SVG paths
   // ==============================================
   // Line generators for each line
+    
   var line1 = d3
     .line()
     .x(d => xTimeScale(d.date))
@@ -97,12 +108,14 @@ d3.csv("donuts.csv").then(function(donutData) {
     .y(d => yLinearScale2(d.evening));
 
   // Append a path for line1
+    
   chartGroup.append("path")
     .data([donutData])
     .attr("d", line1)
     .classed("line green", true);
 
   // Append a path for line2
+    
   chartGroup.append("path")
     .data([donutData])
     .attr("d", line2)
@@ -112,9 +125,11 @@ d3.csv("donuts.csv").then(function(donutData) {
   // YOUR CODE HERE
 
   chartGroup.append("text")
+    
     // Position the text
     // Center the text:
     // (https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor)
+    
     .attr("transform", `translate(${width / 2}, ${height + margin.top + 20})`)
     .attr("text-anchor", "middle")
     .attr("font-size", "16px")

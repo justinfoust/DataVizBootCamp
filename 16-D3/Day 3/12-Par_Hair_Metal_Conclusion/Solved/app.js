@@ -94,7 +94,7 @@ function updateToolTip(chosenXAxis, circlesGroup) {
 // Retrieve data from the CSV file and execute everything below
 d3.csv("hairData.csv").then(function(hairData, err) {
   if (err) throw err;
-
+    console.log(hairData);
   // parse data
   hairData.forEach(function(data) {
     data.hair_length = +data.hair_length;
