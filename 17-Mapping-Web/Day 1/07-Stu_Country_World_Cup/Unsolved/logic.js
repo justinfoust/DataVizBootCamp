@@ -9,7 +9,7 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
   maxZoom: 18,
   id: "mapbox.streets-basic",
-  accessToken: API_KEY
+  accessToken: "pk.eyJ1IjoiamZvdXN0IiwiYSI6ImNrNW9veTVtazA0eHQza3FoZmI3b3gxNDgifQ.ecvXzuUG2FS0X3E5SoyAkw"
 }).addTo(myMap);
 
 // Country data
@@ -72,6 +72,18 @@ var countries = [
   // Conditionals for countries points
 
   // Add circles to map
-
+function colorPick(num) {
+    if (num > 200) {return "yellow"} 
+    else if (num > 100) {return "blue"}
+    else if (num > 90) {return "green"}
+    else {return "red"}
+};
 
   // Adjust radius
+countries.map(d => {
+    L.circle(d.location, {
+        color: colorPick(d.points),
+        radius: d.points * 1000
+    }).bindPopup(`<h1>${d.name}</h1><hr><h3>Number of 3-pointers<br> ${d.points}</h3>`)
+    .addTo(myMap);
+})

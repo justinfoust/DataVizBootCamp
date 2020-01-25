@@ -23,3 +23,19 @@ var marker = L.marker([45.52, -122.67], {
 
 // Binding a pop-up to our marker
 marker.bindPopup("Hello There!");
+
+var places = [
+    {
+        coordinates: [],
+        population: ""
+        name:
+    },{
+        
+    }
+]
+
+places.map( d => {
+    L.marker(d.coordinates)
+    .bindPopup("")
+    .addTo(myMap);
+})

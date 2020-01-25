@@ -111,9 +111,22 @@ var darkmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?
 
 // Create two separate layer groups below. One for city markers, and one for states markers
 
+var states = L.layerGroup(stateMarkers);
+var cities = L.layerGroup(cityMarkers);
+
 // Create a baseMaps object to contain the streetmap and darkmap
+var baseMaps = {
+    "Street Map": streetmap,
+    "Dark Map": darkmap
+};
+
 
 // Create an overlayMaps object here to contain the "State Population" and "City Population" layers
+var overlayMaps - {
+    "State Population": states,
+    "City Population": cities
+};
+
 
 // Modify the map so that it will have the streetmap, states, and cities layers
 L.map("map", {
