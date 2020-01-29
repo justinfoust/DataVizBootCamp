@@ -14,3 +14,15 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   id: "mapbox.streets",
   accessToken: API_KEY
 }).addTo(myMap);
+
+
+var legend = L.control({position: 'bottomleft'});
+    legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend');
+    labels = ['<strong>Categories</strong>'],
+    categories = ['Road Surface','Signage','Line Markings','Roadside Hazards','Other'];
+
+    return div;
+    };
+    legend.addTo(myMap);
